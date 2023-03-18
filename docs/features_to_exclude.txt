@@ -1,0 +1,11 @@
+bus_or_coach_passenger
+engine_capacity_cc
+hit_object_in_carriageway
+hit_object_off_carriageway
+pedestrian_location
+pedestrian_movement
+pedestrian_road_maintenance_worker
+towing_and_articulation
+vehicle_leaving_carriageway
+vehicle_left_hand_drive
+vehicle_location_restricted_lane
