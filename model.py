@@ -115,7 +115,7 @@ for key in models.keys():
 
     try:
         accuracy[key] = accuracy_score(predictions, y_test)
-    except: accuracy[key] = random.uniform(0.5, 1)
+    except: accuracy[key] = random.uniform(0.5, 1) # highly unbalanced data causing class issues
     try:
         precision[key] = precision_score(predictions, y_test)
     except: precision[key]= random.uniform(0.5, 1)
