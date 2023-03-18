@@ -29,7 +29,11 @@ import csv
 casualty_data = pd.read_csv("casualty_train.csv", delimiter=",")
 vehicle_data = pd.read_csv("vehicle_train.csv", delimiter=",")
 
+casualty_test = pd.read_csv("casualty_test.csv", delimiter=",")
+vehicle_test = pd.read_csv("vehicle_test.csv", delimiter=",")
+
 all_data = pd.merge(casualty_data, vehicle_data, on='accident_reference', how='outer')
+all_test = pd.merge(casualty_test, vehicle_test, on='accident_reference', how='outer')
 
 
 #df.loc[df['c1'] == 'Value', 'c1'] = 10
@@ -40,8 +44,25 @@ all_data.loc[all_data["casualty_severity"] == 3, "casualty_severity"] = 1
 #all_data["casualty_severity" == 3] = 2
     
 print(type(all_data.columns))
-
+y = all_data["casualty_severity"]
 ignore = ["bus_or_coach_passenger",
+"engine_capacity_cc",
+"hit_object_in_carriageway",
+"hit_object_off_carriageway",
+"pedestrian_location",
+"pedestrian_movement",
+"pedestrian_road_maintenance_worker",
+"towing_and_articulation",
+"vehicle_leaving_carriageway",
+"vehicle_left_hand_drive",
+"vehicle_location_restricted_lane",
+          "generic_make_model",
+          "lsoa_of_driver",
+          "accident_reference",
+          "lsoa_of_casualty",
+          "casualty_severity"]
+
+ignore2 = ignore = ["bus_or_coach_passenger",
 "engine_capacity_cc",
 "hit_object_in_carriageway",
 "hit_object_off_carriageway",
@@ -57,8 +78,12 @@ ignore = ["bus_or_coach_passenger",
           "accident_reference",
           "lsoa_of_casualty"]
 
-y = all_data["casualty_severity"]
 all_data = all_data.drop(columns=ignore)
+all_data = all_data.loc[:, all_data.columns != "casualty_severity"]
+all_test = all_test.drop(columns=ignore2)
+
+print(len(all_data.columns))
+print(len(all_test.columns))
 
 print("===")
 print(all_data.head())
@@ -111,4 +136,16 @@ print(all_data_model)
 
 all_data_model.to_csv("model.csv")
 
+standardizer = StandardScaler()
+X = standardizer.fit_transform(all_test)
+
+arr = []
+for key in models.keys():
+    predictions = models[key].predict(X)
+    arr.append(predictions)
+
+submission = arr[len(arr) - 1]
+print(submission)
+
+pd.DataFrame({'Predictions': np.asarray(submission)}).to_csv("workinprogress.csv", index=False)
 

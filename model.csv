@@ -1,0 +1,8 @@
+,Accuracy,Precision,Recall,Roc,F1,Summary
+Logistic Regression,1.0,1.0,1.0,1.0,1.0,1.0
+Support Vector Machines,1.0,1.0,1.0,1.0,1.0,1.0
+Decision Trees,1.0,1.0,1.0,1.0,1.0,1.0
+Random Forest,1.0,1.0,1.0,1.0,1.0,1.0
+Naive Bayes,1.0,1.0,1.0,1.0,1.0,0.9988135102512632
+K-Nearest Neighbor,0.9980061744275791,1.0,0.9976284282599549,0.9988142141299774,0.9988128063725491,1.0
+XGBoost,1.0,1.0,1.0,1.0,1.0,1.0
