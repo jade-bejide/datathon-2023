@@ -34,8 +34,8 @@ all_data = pd.merge(casualty_data, vehicle_data, on='accident_reference', how='o
 
 #df.loc[df['c1'] == 'Value', 'c1'] = 10
 
-all_data.loc[all_data["casualty_severity"] == 2, "casualty_severity"] = 1
-all_data.loc[all_data["casualty_severity"] == 3, "casualty_severity"] = 2
+all_data.loc[all_data["casualty_severity"] == 2, "casualty_severity"] = 0
+all_data.loc[all_data["casualty_severity"] == 3, "casualty_severity"] = 1
 #all_data["casualty_severity" == 2] = 1
 #all_data["casualty_severity" == 3] = 2
     
