@@ -37,8 +37,24 @@ all_data["casualty_severity" == 3] = 2
     
 print(type(all_data.columns))
 
+ignore = ["bus_or_coach_passenger",
+"engine_capacity_cc",
+"hit_object_in_carriageway",
+"hit_object_off_carriageway",
+"pedestrian_location",
+"pedestrian_movement",
+"pedestrian_road_maintenance_worker",
+"towing_and_articulation",
+"vehicle_leaving_carriageway",
+"vehicle_left_hand_drive",
+"vehicle_location_restricted_lane",
+          "generic_make_model",
+          "lsoa_of_driver",
+          "accident_reference",
+          "lsoa_of_casualty"]
+
 y = all_data["casualty_severity"]
-all_data.drop(columns=ignore)
+all_data = all_data.drop(columns=ignore)
 
 print("===")
 print(all_data.head())
@@ -46,11 +62,9 @@ print("===")
 X = all_data
 
 
-print("Here")
 
 standardizer = StandardScaler()
 X = standardizer.fit_transform(X)
-print("No Here")
 
 X_train, X_test, y_train, y_test = train_test_split(X, y , test_size=0.25, random_state=0)
 
