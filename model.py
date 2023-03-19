@@ -6,12 +6,6 @@ from mpl_toolkits.mplot3d import Axes3D
 import pandas as pd
 import random
 
-# %matplotlib inline
-# notebook
-import matplotlib.pylab as pylab
-pylab.rcParams['figure.figsize'] = (16.0, 12.0)
-pylab.rcParams['font.size'] = 24
-
 import math
 import xgboost as xgb
 from scipy.stats import norm
@@ -27,18 +21,24 @@ from sklearn.svm import LinearSVC
 from sklearn.linear_model import LogisticRegression
 import csv
 
+# reads in csv files and returns data of the type DataFrame
+# training dataset
 casualty_data = pd.read_csv("casualty_train.csv", delimiter=",")
 vehicle_data = pd.read_csv("vehicle_train.csv", delimiter=",")
 
+# testing dataset
 casualty_test = pd.read_csv("casualty_test.csv", delimiter=",")
 vehicle_test = pd.read_csv("vehicle_test.csv", delimiter=",")
 
+# merge Dataframes with a database-style join on the label "accident_reference"
 all_data = pd.merge(casualty_data, vehicle_data, on='accident_reference', how='outer')
 all_test = pd.merge(casualty_test, vehicle_test, on='accident_reference', how='outer')
 
 
-    
-print(type(all_data.columns))
+# print("all_data.columns: ", len(all_data.columns)) # length: 42
+# print(type(all_data.columns)) # returns an object Index which stores the axis labels for all pandas objects.
+
+
 y = all_data['casualty_severity']
 ignore = ["casualty_severity",
           "bus_or_coach_passenger",
