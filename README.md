@@ -34,7 +34,7 @@ Predict whether a fatal/serious casualty occurs
 
 Predict the `casualty_severity` column in the [casualty_test.csv](casualty_test.csv) dataset for whether an accident is fatal/serious or slight using road traffic data about the casualty, accident, and vehicles involved.
 
-Note: Map targets to binary `1` (fatal, serious) and `0` (slight).
+Note: Map targets to binary `0` (fatal, serious) and `1` (slight).
 
 ---
 
