@@ -1,7 +1,5 @@
 # datathon-2023
 
-[![Team Name](https://img.shields.io/badge/%E2%9A%A0%EF%B8%8F-work%20in%20progress-blueviolet)](https://img.shields.io/badge/%E2%9A%A0%EF%B8%8F-work%20in%20progress-blueviolet)
-
 ## Table of Contents ##
 - [datathon-2023](#datathon-2023)
     - [About the Datathon](#about-the-datathon)
@@ -21,6 +19,7 @@ This Datathon was hosted by the Bristol Data Science Society (BDSS) in associati
 ---
 
 ## Team
+[![Team Name](https://img.shields.io/badge/%E2%9A%A0%EF%B8%8F-work%20in%20progress-blueviolet)](https://img.shields.io/badge/%E2%9A%A0%EF%B8%8F-work%20in%20progress-blueviolet)
 
 Our team (called `work in progress`) consists of 2 people from the University of Bristol:
 - [Nikhil Parimi](https://www.linkedin.com/in/nikhil-parimi/) (Computer Science, 2nd Year)
@@ -35,7 +34,7 @@ Predict whether a fatal/serious casualty occurs
 
 Predict the `casualty_severity` column in the [casualty_test.csv](casualty_test.csv) dataset for whether an accident is fatal/serious or slight using road traffic data about the casualty, accident, and vehicles involved.
 
-Note: Map targets to binary 1 (fatal, serious) and 0 (slight).
+Note: Map targets to binary `1` (fatal, serious) and `0` (slight).
 
 ---
 
@@ -55,7 +54,7 @@ Note: Map targets to binary 1 (fatal, serious) and 0 (slight).
 ## Preprocessing
 
 1. Merged both csv files together on common field `accident_reference`
-2. Merged the values of the column `casualty_severity` into binary form; mapping 1 to fatal / serious and 0 to slight.
+2. Merged the values of the column `casualty_severity` into binary form; mapping `1` to fatal / serious and `0` to slight.
 3. lorem ipsum
 
 ---
