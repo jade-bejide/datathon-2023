@@ -7,7 +7,7 @@
     - [Objectives](#objectives)
     - [Dataset](#dataset)
     - [Preprocessing](#preprocessing)
-    - [Challenges](#challenges)
+    - [Modelling](#modelling)
 
 
 ---
@@ -23,7 +23,7 @@ This Datathon was hosted by the Bristol Data Science Society (BDSS) in associati
 
 Our team (called `work in progress`) consists of 2 people from the University of Bristol:
 - [Nikhil Parimi](https://www.linkedin.com/in/nikhil-parimi/) (Computer Science, 2nd Year)
-- [Jadesola Bejide](https://www.linkedin.com/in/jadesolabejide/) (Computer Science, 2nd Year)
+- [Jadesola Bejide](https://www.jadesolabejide.dev/portfolio/#/) (Computer Science, 2nd Year)
 
 
 ---
@@ -53,26 +53,9 @@ Note: Map targets to binary `1` (fatal, serious) and `0` (slight).
 
 ## Preprocessing
 
-1. Merged both csv files together on common field `accident_reference`
+1. Merged both csv files together on common field `accident_reference` to make detailed statistical analyses about the features
 2. Merged the values of the column `casualty_severity` into binary form; mapping `1` to fatal / serious and `0` to slight.
-3. lorem ipsum
 
----
-
-## Challenges
-
-### Challenge #1
-
-lorem ipsum lorem ipsum
-
-
-### Challenge #2
-
-lorem ipsum lorem ipsum
-
-
-### Challenge #3
-
-lorem ipsum lorem ipsum
-
----
+## Modelling
+1. Dropped features with no gaussian or monotonically increasing/decreasing correlation
+2. Used scikit-learn to train various machine learning models, including Naive Bayes and Support Vector Machines
